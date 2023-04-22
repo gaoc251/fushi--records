@@ -1,3 +1,5 @@
+const path = require('path')
+
 const config = {
   projectName: 'demo',
   date: '2022-9-7',
@@ -59,6 +61,12 @@ const config = {
         }
       }
     }
+  },
+  alias: {
+    '@/components': path.resolve(__dirname, '..', 'src/components'),
+    '@/utils': path.resolve(__dirname, '..', 'src/utils'),
+    '@/data': path.resolve(__dirname, '..', 'src/data'),
+    '@/asset': path.resolve(__dirname, '..', 'src/asset'),
   }
 }
 

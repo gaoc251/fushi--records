@@ -1,4 +1,4 @@
 export default {
-  navigationBarTitleText: 'Home',
+  navigationBarTitleText: '配方',
   navigationBarBackgroundColor: '#E9F3F0'
 }

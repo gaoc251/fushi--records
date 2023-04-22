@@ -1,0 +1,24 @@
+.index-icon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 30rpx;
+    &_item {
+        border-radius: 30rpx;
+        width: 29%;
+        height: 270rpx;
+        margin: 12rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        &-img {
+            height: 106rpx;
+            width: 106rpx;
+        }
+        &-text {
+            margin-top: 30rpx;
+            font-size: 34rpx;
+        }
+    }
+}

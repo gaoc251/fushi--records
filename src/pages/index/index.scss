@@ -1,0 +1,35 @@
+.index {
+    &__header {
+        height: 192rpx;
+        background-color: #E9F3F0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-search {
+            display: flex;
+            flex-direction: row;
+            &-input {
+                border-radius: 10rpx;
+                border: 1rpx solid #22BB9B;
+                width: 400rpx;
+                height: 70rpx;
+                line-height: 70rpx;
+                padding-left: 30rpx;
+            }
+            &-btn {
+                margin-left: 28rpx;
+                background-color: #22BB9B;
+                height: 70rpx;
+                width: 70rpx;
+                border-radius: 10rpx;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            &-icon {
+                height: 28rpx;
+                width: 35rpx;
+            }
+        }
+    }
+}

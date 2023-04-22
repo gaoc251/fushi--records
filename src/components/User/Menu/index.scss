@@ -1,0 +1,41 @@
+$height: 120rpx;
+.user-menu {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: #fff;
+    margin: 60rpx 70rpx;
+    background: #f7f7f7;
+    padding: 0 38rpx;
+    border-radius: 54rpx;
+    box-shadow: 10rpx 10rpx 50rpx 5rpx #DDE0D1;;
+
+    &__item {
+        display: flex;
+        flex-direction: row;
+        // justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: $height;
+        box-sizing: border-box;
+        border-bottom: 1rpx solid #ccc;
+        color: #444736;
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        &-icon {
+            height: 40rpx;
+            width: 40rpx;
+            margin-right: 30rpx;
+        }
+
+        &-txt {
+            color: #333;
+            font-size: 30px;
+            flex: 1;
+            line-height: $height;
+        }
+        
+    }
+}

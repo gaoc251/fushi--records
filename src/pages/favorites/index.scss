@@ -1,0 +1,24 @@
+$bgcolor: #22BB9B;
+$navHeight: 74rpx;
+.favorites {
+    padding: 20rpx 44rpx;
+    &__tab {
+        display: flex;
+        flex-direction: row;
+        font-size: 30rpx;
+        &-item {
+            width: 160rpx;
+            height: $navHeight;
+            line-height: $navHeight;
+            border-radius: 50rpx;
+            text-align: center;
+            border: 1rpx solid #ccc;
+            margin-right: 20rpx;
+        }
+        .active {
+            background-color: $bgcolor;
+            color: #fff;
+            border: 1rpx solid $bgcolor;
+        }
+    }
+}
