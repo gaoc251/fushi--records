@@ -1,0 +1,14 @@
+$height: 800rpx;
+.detail {
+    &__header {
+        height: 800rpx;
+        background-color: #E9F3F0;
+        &-swiper {
+            height: $height;  
+        }
+        &-swiperitem-img {
+            height: $height;
+            width: 100%;
+        }
+    }
+}

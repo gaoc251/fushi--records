@@ -6,6 +6,7 @@ $navHeight: 74rpx;
         display: flex;
         flex-direction: row;
         font-size: 30rpx;
+        margin-bottom: 40rpx;
         &-item {
             width: 160rpx;
             height: $navHeight;
