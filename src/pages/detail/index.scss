@@ -1,7 +1,7 @@
-$height: 800rpx;
+$height: 500rpx;
 .detail {
     &__header {
-        height: 800rpx;
+        height: $height;
         background-color: #E9F3F0;
         &-swiper {
             height: $height;  
@@ -10,5 +10,41 @@ $height: 800rpx;
             height: $height;
             width: 100%;
         }
+    }
+    &__title {
+        font-size: 50rpx;
+        padding: 30rpx;
+        text-align: center;
+        font-weight: 600;
+    }
+    &__info {
+        border-radius: 50rpx;
+        background-color: #FF9B00;
+        margin: 0 44rpx;
+        padding: 20rpx 36rpx;
+        color: #fff;
+        font-size: 32rpx;
+        line-height: 1.8;
+    }
+    &__steps {
+        margin: 20rpx 44rpx;
+        font-size: 34rpx;
+        line-height: 1.8;
+        color: #696464;
+        &-title {
+            font-size: 40rpx;
+            color: #000;
+            line-height: 2;
+        }
+    }
+    &__favicon {
+        height: 60rpx;
+        width: 60rpx;
+        position: absolute;
+        bottom: 60rpx;
+        right: 60rpx;
+        border: 20rpx solid transparent;
+        border-radius: 50%;
+        box-shadow: 10rpx 10rpx 20rpx 10rpx #DDE0D1;
     }
 }

@@ -10,8 +10,32 @@ const res = {
     "https://yanxuan-item.nosdn.127.net/827b4573b699b9c6a33edc969979e01b.jpg",
     "https://yanxuan-item.nosdn.127.net/27553eecdc2647245399af9022bd179a.jpg",
     "https://yanxuan-item.nosdn.127.net/5718cb5ce75b2df5881cfc9ebc97887a.jpg",
-    "https://yanxuan-item.nosdn.127.net/2c74266b2f6091cf041d855935b23c9f.jpg"]
+    "https://yanxuan-item.nosdn.127.net/2c74266b2f6091cf041d855935b23c9f.jpg"],
+    title: '蛋炒饭',
+    ingredients: '苹果',
+    seasoning: '无',
+    cooking: 0,
+    hard: 0,
+    month: '6',
+    tip: 'mmmmmmm',
+    steps: [
+      '1、少时诵诗书所所所',
+      '2、少时诵诗书所所所',
+      '3、少时诵诗书所所所'
+    ]
   }
+}
+
+import favIcon from '@/asset/imgs/favorite-default.png'
+
+const cookingText = {
+  0: '蒸',
+  1: '炒',
+  2: '煎',
+  3: '搅拌',
+  4: '煮',
+  5: '烘焙',
+  6: '炖'
 }
 export default class Detail extends Component  {
 
@@ -26,7 +50,7 @@ export default class Detail extends Component  {
   componentDidHide () { }
 
   render () {
-    const { imgList } =res.data
+    const { imgList,title, ingredients, seasoning, month, cooking, hard, tip, steps } =res.data
     return (
         <View className='detail'>
           <View className='detail__header'>
@@ -41,17 +65,28 @@ export default class Detail extends Component  {
                     <Image src={item}  className="detail__header-swiperitem-img" mode='scaleToFill'/>
                   </SwiperItem>
                 })}
-              {/* <SwiperItem className='detail__header-swiperitem'>
-                <View className='demo-text-1'>1</View>
-              </SwiperItem>
-              <SwiperItem>
-                <View className='demo-text-2'>2</View>
-              </SwiperItem>
-              <SwiperItem>
-                <View className='demo-text-3'>3</View>
-              </SwiperItem> */}
             </Swiper>
           </View>
+
+          <View className='detail__title'>{title}</View>
+
+          <View className='detail__info'>
+            <View>食材：{ingredients}</View>
+            <View>调料：{seasoning}</View>
+            <View>烹饪方法{cookingText[cooking]}</View>
+            <View>月龄：{month}</View>
+            <View>难易程度：{hard} 级</View>
+            <View>注意：{tip}</View>
+          </View>
+
+          <View className='detail__steps'>
+            <View className='detail__steps-title'>步骤：</View>
+            { steps.map((item: any)=>{
+              return <View className=''>{item}</View>
+            })}
+          </View>
+
+          <Image src={favIcon} className='detail__favicon'/>
         </View>
     )
   }
