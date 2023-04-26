@@ -5,6 +5,7 @@ import './index.scss'
 import Profile from '@/components/User/Profile'
 import Menu from '@/components/User/Menu'
 
+
 export default class User extends Component  {
 
   componentWillMount () { }
@@ -24,6 +25,8 @@ export default class User extends Component  {
             <Profile/>
             {/* 目录 */}
             <Menu/>
+            {/* 上传接口 */}
+            <View className='jumpUpload'>上传</View>
         </View>
     )
   }

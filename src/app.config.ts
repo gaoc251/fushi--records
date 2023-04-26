@@ -4,7 +4,8 @@ export default {
     'pages/recipes/index',
     'pages/favorites/index',
     'pages/user/index',
-    'pages/detail/index'
+    'pages/detail/index',
+    'pages/uploadFushi/index'
   ],
   window: {
     backgroundTextStyle: 'light',

@@ -1,0 +1,17 @@
+.upload-fushi {
+    padding: 44px;
+    &__form {
+        &-item {
+            display: flex;
+            flex-direction: row;
+            height: 80px;
+            align-items: center;
+            &.uploadImg {
+                height: 300px;
+            }
+            &-upload {
+                flex: 1;
+            }
+        }
+    }
+}
