@@ -6,11 +6,29 @@
             flex-direction: row;
             height: 80px;
             align-items: center;
+            margin-bottom: 20px;
             &.uploadImg {
                 height: 300px;
             }
-            &-upload {
+            &.chooseHeight {
+                height: 256px;
+                border: 1px dashed;
+            }
+            &-flex1 {
                 flex: 1;
+            }
+            &-label {
+                width: 40%;
+                margin-bottom: 10px;
+            }
+            &-radio {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                flex: 1;
+            }
+            &-title {
+                width: 160px;
             }
         }
     }

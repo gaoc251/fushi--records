@@ -264,7 +264,6 @@ export default class UploadImage extends Component<propType, stateType> {
 
     return (
       <View className='upload-img'>
-        图片上传
         <View className="choose-img-wrap">
           { files.map((data:any) => {
             return (
