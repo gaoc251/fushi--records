@@ -2,6 +2,8 @@ import { Component } from 'react'
 import { View, Image, Swiper, SwiperItem } from '@tarojs/components'
 import './index.scss'
 
+import Taro, {getCurrentInstance} from '@tarojs/taro'
+import { getDetail } from './lib/getDetail'
 const res = {
   code: '0',
   msg: 'success',
@@ -38,8 +40,27 @@ const cookingText = {
   6: '炖'
 }
 export default class Detail extends Component  {
+  $instance = getCurrentInstance()
 
-  componentWillMount () { }
+  state = {
+    options: {}, // 路由参数
+    id: 0, // 菜谱ID,
+    detailInfo: {}, // 菜谱详情
+  }
+  componentWillMount () {
+    let self = this; 
+    // 获取路由参数
+    const options = this.$instance.router.params
+    self.setState({
+      id: options.id,
+      options
+    })
+    getDetail(options.id, (data)=>{
+      self.setState({
+        detailInfo: data
+      })
+    })
+  }
 
   componentDidMount () { }
 
@@ -50,7 +71,7 @@ export default class Detail extends Component  {
   componentDidHide () { }
 
   render () {
-    const { imgList,title, ingredients, seasoning, month, cooking, hard, tip, steps } =res.data
+    const { detailInfo} = this.state
     return (
         <View className='detail'>
           <View className='detail__header'>
@@ -60,7 +81,7 @@ export default class Detail extends Component  {
               indicatorActiveColor='#333'
               circular
               indicatorDots>
-                {imgList && imgList.map((item:string) => {
+                {detailInfo.imgList && detailInfo.imgList.map((item:string) => {
                   return <SwiperItem className='detail__header-swiperitem'>
                     <Image src={item}  className="detail__header-swiperitem-img" mode='scaleToFill'/>
                   </SwiperItem>
@@ -68,20 +89,20 @@ export default class Detail extends Component  {
             </Swiper>
           </View>
 
-          <View className='detail__title'>{title}</View>
+          <View className='detail__title'>{detailInfo.recordTitle}</View>
 
           <View className='detail__info'>
-            <View>食材：{ingredients}</View>
-            <View>调料：{seasoning}</View>
-            <View>烹饪方法{cookingText[cooking]}</View>
-            <View>月龄：{month}</View>
-            <View>难易程度：{hard} 级</View>
-            <View>注意：{tip}</View>
+            <View>食材：{detailInfo.ingredients}</View>
+            <View>调料：{detailInfo.seasoning}</View>
+            <View>烹饪方法{cookingText[detailInfo.cooking]}</View>
+            <View>月龄：{detailInfo.month}</View>
+            <View>难易程度：{detailInfo.hard} 级</View>
+            <View>注意：{detailInfo.tip}</View>
           </View>
 
           <View className='detail__steps'>
             <View className='detail__steps-title'>步骤：</View>
-            { steps.map((item: any)=>{
+            {detailInfo.steps && detailInfo.steps.split(';;').map((item: any)=>{
               return <View className=''>{item}</View>
             })}
           </View>

@@ -13,19 +13,19 @@ const FLITER_NAV = [
         text: '月龄查询',
         key: 'month',
         subList: [{
-            key: '6,7',
+            key: '6-7',
             text: '6-7月',
             textColor: '#E23D24',
             imgURL: icon1,
             bgColor: '#FFE2DE'
         },{
-            key: '8,9',
+            key: '8-9',
             text: '8-9月',
             textColor: '#FF9B00',
             imgURL: icon2,
             bgColor: '#FFF5E5'
         },{
-            key: '10,11',
+            key: '10-11',
             text: '10-11月',
             textColor: '#186DDD',
             imgURL: icon3,

@@ -10,14 +10,14 @@ const data = {
     list: [{
         id: 1,
         title: "面条",
-        desc: "无",
+        description: "无",
         favoriteNum: 9,
         imgList: [imgIcon],
         time: '24min'
     },{
         id: 2,
         title: "白水蛋",
-        desc: "无",
+        description: "无",
         favoriteNum: 10,
         imgList: [imgIcon],
         time: '1h'

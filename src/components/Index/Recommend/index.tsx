@@ -7,13 +7,13 @@ import imgIcon from '../../../asset/imgs/del/masala-papad 1.png'
 const recommendList = [{
     id: 1,
     title: "面条",
-    desc: "无",
+    description: "无",
     favoriteNum: 9,
     imgList: [imgIcon]
 },{
     id: 2,
     title: "白水蛋",
-    desc: "无",
+    description: "无",
     favoriteNum: 10,
     imgList: [imgIcon]
 }]

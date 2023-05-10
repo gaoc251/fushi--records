@@ -5,7 +5,8 @@ export default {
     'pages/favorites/index',
     'pages/user/index',
     'pages/detail/index',
-    'pages/uploadFushi/index'
+    'pages/uploadFushi/index',
+    'pages/cateSub/index'
   ],
   window: {
     backgroundTextStyle: 'light',
