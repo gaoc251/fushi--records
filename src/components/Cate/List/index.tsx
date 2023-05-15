@@ -25,13 +25,12 @@ export default class List extends Component<propType> {
             <View className='listC'>
                 <View className='listC__list'>
                     { list.map((item:any) => {
-                        console.log("item", item && JSON.parse(item.imgList))
-                        
+                        let imgItem = item && JSON.parse(item.imgList)[0]
                         return (<View 
                             key={item.id}
                             className='listC__list-item'
                             onClick={this.handleClick.bind(this, item)}>
-                                <Image className='listC__list-item-img' src={item.imgList[0]} mode='scaleToFill'/>
+                                <Image className='listC__list-item-img' src={imgItem} mode='scaleToFill'/>
                                 {!!item.description &&
                                     <Text className='listC__list-item-desc' numberOfLines={1}>
                                         {item.description}

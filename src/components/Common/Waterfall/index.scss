@@ -1,0 +1,13 @@
+.water-fall {
+    display: flex;
+    flex-direction: row;
+    padding: 20rpx 20rpx 0;
+    &__feed {
+        display: flex;
+        flex-direction: column;
+        width: calc( 50% - 10rpx);
+        &.left {
+            margin-right: 20rpx;
+        }
+    }
+}

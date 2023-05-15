@@ -29,13 +29,16 @@ export default class CateSub extends Component {
       title: decodeURIComponent(options.title)
     })
     let obj = FLITER_NAV.filter(item => {return item.key === options.cate})
-    let _subMenu:any = obj[0].subList
+    let _subMenu:any = obj[0].subList, _index =0
+    _subMenu.forEach((item, index)=>{
+      if (item.key == options.key) {
+        _index = index
+      }
+    })
     self.setState({
       options: options,
       subMenu: _subMenu,
-    })
-    FLITER_NAV.forEach(item=>{
-      console.log("item", item)
+      current: _index
     })
     
     getCateSub(options.cate || '', options.key, (data) => {

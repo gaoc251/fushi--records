@@ -47,7 +47,7 @@ export default class UploadFushi extends Component {
       }
 
       console.log('params', params)
-      
+    
       Request('post', API_FUSHI_saveFushiRecord, params).then((res:any) => {
         if (res.code == 0) {
           Taro.showModal({

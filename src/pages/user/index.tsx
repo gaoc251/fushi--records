@@ -24,9 +24,9 @@ export default class User extends Component  {
             {/* 用户信息 */}
             <Profile/>
             {/* 目录 */}
-            <Menu/>
+            {/* <Menu/> */}
             {/* 上传接口 */}
-            <View className='jumpUpload'>上传</View>
+            {/* <View className='jumpUpload'>上传</View> */}
         </View>
     )
   }
