@@ -1,7 +1,14 @@
 import { Component } from 'react'
 import './app.scss'
+import Taro from '@tarojs/taro'
+import { getOpenId } from '@/utils/util'
 
 class App extends Component {
+
+  componentWillMount(): void {
+    let openId = Taro.getStorageSync('openId')
+    !openId && getOpenId ()
+  }
 
   componentDidMount () {}
 

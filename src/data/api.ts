@@ -8,7 +8,7 @@ export const API_FUSHI_getFushiRecord = `${host}/getFushiRecord`
 // 查询辅食详情
 export const API_FUSHI_getFushiDetail = `${host}/getFushiDetail`
 // 操作收藏状态
-export const API_FUSHI_getFushiCollect = `${host}/getFushiCollect`
+export const API_FUSHI_getFushiCollect = `${host}/updateFushiCollect`
 
 
 

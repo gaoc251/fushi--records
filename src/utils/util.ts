@@ -31,7 +31,6 @@ function getUserProfile (cb?) {
                 key: "userInfo",
                 data: res.userInfo
             })
-            getOpenId()
             cb && cb(res.userInfo)
         }
     })
@@ -54,17 +53,16 @@ function getOpenId () {
                                 iv: user.iv
                             },
                             success: function (res) {
-                                let _userInfo = Taro.getStorageSync('userInfo')
-                                _userInfo.openId = res.data.data.openId
+                                let openId = res.data.data.openId
 
                                 Taro.setStorage({
-                                    key: "userInfo",
-                                    data: _userInfo
+                                    key: "openId",
+                                    data: openId
                                 })
                             }
                         })              
     
-                }
+                    }
                 })
             }
   
@@ -75,9 +73,10 @@ function getOpenId () {
 // 判断登录态
 function isLogin () {
     let userInfo = Taro.getStorageSync('userInfo')
-    return Object.keys(userInfo).length
+    return Number(Object.keys(userInfo).length)
 }
 export {
     handleLogin,
-    isLogin
+    isLogin,
+    getOpenId
 }

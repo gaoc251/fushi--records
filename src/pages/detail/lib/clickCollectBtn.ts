@@ -4,13 +4,12 @@
 import { Request } from '@/utils/request'
 import { API_FUSHI_getFushiCollect } from '@/data/api'
 
-export function clickCollect (item, userId, cb) {
-    debugger
-    // Request('get', API_FUSHI_getFushiCollect, {item.id, userId}).then((res:any) => {
-    //     if (res.code == 0) {
-    //         cb(res.data)
-    //     } else {
-    //        console.log("接口异常了") 
-    //     }
-    // })
+export function clickCollect (item, openId, cb) {
+    Request('get', API_FUSHI_getFushiCollect, {id:item.id, openId}).then((res:any) => {
+        if (res.code == 0) {
+            cb(res.data)
+        } else {
+           console.log("接口异常了") 
+        }
+    })
 }
