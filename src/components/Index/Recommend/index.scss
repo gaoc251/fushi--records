@@ -88,15 +88,19 @@
             margin-right: 20px;
             padding: 0 30px;
             box-sizing: border-box;
-            &:last-child {
-                margin-right: 0;
-            }
+            
             &-img {
                 height: 100px;
                 width: 100px;
                 margin-right: 20px;
             }
             &-info {
+                width: 220px;
+                .ellipsis {
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
                 &-title {
                     font-size: 30px;
                     font-weight: 400;
@@ -113,7 +117,7 @@
                 align-items: center;
                 color: #FF9B00;
                 background: #fff;
-                padding: 5px 22px;
+                padding: 2px 16px;
                 border-radius: 15px;
                 position: absolute;
                 bottom: 10px;

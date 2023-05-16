@@ -13,19 +13,22 @@ import favorIcon from '@/asset/imgs/favorite.png'
 import aboutIcon from '@/asset/imgs/about.png'
 import fankuiIcon from '@/asset/imgs/fankui.png'
 
-const menu =[{
-    icon: favorIcon,
-    text: '我的收藏',
-    key: 'favorite'
-}, {
-    icon: aboutIcon,
-    text: '关于我们',
-    key: 'about'
-}, {
-    icon: fankuiIcon,
-    text: '意见反馈',
-    key: 'fankui'
-}]
+const menu =[
+    // {
+    //     icon: favorIcon,
+    //     text: '我的收藏',
+    //     key: 'favorite'
+    // }, 
+    {
+        icon: aboutIcon,
+        text: '关于我们',
+        key: 'about'
+    }, 
+    {
+        icon: fankuiIcon,
+        text: '意见反馈',
+        key: 'fankui'
+    }]
 
 export default class Menu extends Component<any, stateType> {
 

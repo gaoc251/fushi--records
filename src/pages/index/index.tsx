@@ -8,9 +8,19 @@ import IconList from '@/components/Index/IconList/index'
 import RecommendList from '@/components/Index/Recommend'
 import OtherCate from '@/components/Index/OtherCate'
 
+import { getRecommendList } from './lib/getRecommendList'
 export default class Index extends Component {
-
-  componentWillMount () { }
+  state = {
+    recommendList: [], // 大家都在看
+  }
+  async componentWillMount () {
+    let self = this
+    await getRecommendList ((list)=>{
+      self.setState({
+        recommendList: list
+      })
+    })
+  }
 
   componentDidMount () { }
 
@@ -21,6 +31,7 @@ export default class Index extends Component {
   componentDidHide () { }
 
   render () {
+    const {recommendList} = this.state
     return (
       <View className='index'>
         {/* header */}
@@ -37,7 +48,7 @@ export default class Index extends Component {
         <IconList />
 
         {/* 大家都在看 */}
-        <RecommendList />
+        <RecommendList list={recommendList}/>
 
         {/* 其他筛选项 */}
         <OtherCate />
