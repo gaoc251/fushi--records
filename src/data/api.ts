@@ -14,6 +14,11 @@ export const API_FUSHI_getRecommendList = `${host}/getRecommendList`
 // 获取收藏列表
 export const API_FUSHI_getFavList = `${host}/getFavList`
 
+// 首页模糊搜索
+export const API_FUSHI_getSearch = `${host}/getSearch`
+
+
+
 // 获取openId
 export const API_getOpenId = `${host}/getOpenId`
 

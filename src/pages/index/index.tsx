@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import { View, Text, Input, Image } from '@tarojs/components'
 import './index.scss'
+import Taro from '@tarojs/taro'
 
 import searchIcon from '../../asset/imgs/search.png'
 
@@ -30,13 +31,19 @@ export default class Index extends Component {
 
   componentDidHide () { }
 
+  jumpSearch () {
+    Taro.navigateTo({
+      url: '../search/index'
+    })
+  }
+
   render () {
     const {recommendList} = this.state
     return (
       <View className='index'>
         {/* header */}
         <View className='index__header'>
-          <View className='index__header-search'>
+          <View className='index__header-search' onClick={this.jumpSearch}>
             <Input className='index__header-search-input' value='' placeholder='今天你想吃什么' placeholderTextColor="#1F272D"/>
             <View className='index__header-search-btn'>
               {searchIcon && <Image className='index__header-search-icon' src={searchIcon}/>}

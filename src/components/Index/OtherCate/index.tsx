@@ -17,8 +17,6 @@ export default class OtherCate extends Component  {
   componentDidHide () { }
 
   jumpList (item, parent) {
-    console.log("筛选项", item.key, parent.key)
-    debugger
     Taro.navigateTo({
       url: `../../../../../pages/cateSub/index?type=fushi&cate=${parent.key}&title=${item.text}&key=${item.key}`
     })
