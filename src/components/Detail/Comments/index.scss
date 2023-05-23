@@ -1,0 +1,106 @@
+$border-fourth: #f5f9fd;
+$border-first: #a9a9a9;
+$border-third: #f0f0f0;
+$text-main: #5c5c5c;;
+$text-minor: #959696;
+$text-reply: #3194d0;
+
+$icon-height: 24px;
+.detail-comments {
+    padding: 0 10px;
+    box-sizing: border-box;
+    &__item {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        border-bottom: 1px solid $border-fourth;
+        &-info {
+            display: flex;
+            align-items: center;
+            &-avatar {
+                border-radius: 50%;
+                width: 72px;
+                height: 72px;
+            }
+            &-right {
+                display: flex;
+                flex-direction: column;
+                margin-left: 10px;
+                &-name {
+                    font-size: 32px;
+                    color: $text-main;
+                    margin-bottom: 10px;
+                    font-weight: 500;
+                }
+                &-date {
+                    font-size: 24px;
+                    color: $text-minor;
+                }
+            }
+        }
+        &-content {
+            font-size: 32px;
+            color: $text-main;
+            line-height: 40px;
+            padding: 20px 0;
+        }
+        &-control {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            color: $text-minor;
+            &-like, &-reply {
+                display: flex;
+                align-items: center;
+            }
+            &-like {
+                margin-right: 40px;
+            }
+        }
+        &-reply {
+            margin: 20px 0;
+            border-left: 2px solid $border-first;
+            &-item {
+                margin: 0 20px;
+                padding: 20px 0;
+                border-bottom: 1px dashed $border-third;
+                &-content {
+                    display: flex;
+                    align-items: center;
+                    font-size: 28px;
+                    color: $text-main;
+                    &-fromname, &-toname {
+                        color: $text-reply;
+                    }
+                    &-toname {
+                        margin: 0 10px ;
+                    }
+                }
+            }
+            &-bottom {
+                display: flex;
+                align-items: center;
+                margin-top: 12px;
+                font-size: 24px;
+                color: $text-minor;
+                &-text {
+                    display: flex;
+                    align-items: center;
+                    margin-left: 20px;
+                }
+            }
+        }
+        &-writeReply {
+            display: flex;
+            align-items: center;
+            font-size: 28px;
+            color: $text-minor;
+            padding: 20px;
+        }
+        &-icon {
+            height: $icon-height;
+            width: $icon-height;
+            margin-right: 10px;
+        }
+    }
+}

@@ -9,6 +9,7 @@ import { isLogin, handleLogin } from '@/utils/util'
 import favIcon from '@/asset/imgs/favorite-default.png'
 import favIconSelected from '@/asset/imgs/favorite-choose.png'
 
+import Comments from '@/components/Detail/Comments'
 const cookingText = {
   0: '蒸',
   1: '炒',
@@ -70,7 +71,7 @@ export default class Detail extends Component  {
 
     return (
         <View className='detail'>
-          <View className='detail__header'>
+          {/* <View className='detail__header'>
             <Swiper
               className='detail__header-swiper'
               indicatorColor='#999'
@@ -83,18 +84,18 @@ export default class Detail extends Component  {
                   </SwiperItem>
                 })}
             </Swiper>
-          </View>
+          </View> */}
 
           <View className='detail__title'>{detailInfo.recordTitle}</View>
 
-          <View className='detail__info'>
+          {/* <View className='detail__info'>
             <View>食材：{detailInfo.ingredients}</View>
             <View>调料：{detailInfo.seasoning}</View>
             <View>烹饪方法{cookingText[detailInfo.cooking]}</View>
             <View>月龄：{detailInfo.month}</View>
             <View>难易程度：{detailInfo.hard} 级</View>
             <View>注意：{detailInfo.tip}</View>
-          </View>
+          </View> */}
 
           <View className='detail__steps'>
             <View className='detail__steps-title'>步骤：</View>
@@ -104,6 +105,8 @@ export default class Detail extends Component  {
           </View>
 
           <Image src={detailInfo.collectState?favIconSelected: favIcon} className='detail__favicon' onClick={this.handelCollect.bind(this)}/>
+
+          <Comments />
         </View>
     )
   }

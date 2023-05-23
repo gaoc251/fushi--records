@@ -4,6 +4,7 @@ import './index.scss'
 import Taro from '@tarojs/taro'
 import FavList from '@/components/Favorites/FavList'
 import { getFavList } from './lib/getFavList'
+import { clickCollect } from '../detail/lib/clickCollectBtn'
 
 export default class Favorites extends Component  {
 
@@ -11,7 +12,21 @@ export default class Favorites extends Component  {
         favList: [], // 收藏列表
         openId: Taro.getStorageSync('openId')
     }
-    async componentWillMount () {
+    // async componentWillMount () {
+    //     debugger
+    //     let self = this
+    //     await getFavList(this.state.openId,(list)=>{
+    //         self.setState({
+    //             favList: list
+    //         })
+    //     })
+    // }
+
+    componentDidMount () { }
+
+    componentWillUnmount () { }
+
+    async componentDidShow () {
         let self = this
         await getFavList(this.state.openId,(list)=>{
             self.setState({
@@ -20,13 +35,18 @@ export default class Favorites extends Component  {
         })
     }
 
-    componentDidMount () { }
-
-    componentWillUnmount () { }
-
-    componentDidShow () { }
-
     componentDidHide () { }
+
+    changeCollectState(item) {
+        let self = this
+        clickCollect(item, Taro.getStorageSync('openId'), ()=>{
+            getFavList(this.state.openId,(list)=>{
+                self.setState({
+                    favList: list
+                })
+            })
+        })
+      }
 
     render () {
         const { favList } = this.state
@@ -39,7 +59,7 @@ export default class Favorites extends Component  {
                 </View>
 
                 {/* 收藏列表 */}
-                <FavList list={favList}/>
+                <FavList list={favList} changCollect={this.changeCollectState.bind(this)}/>
             </View>
         )
     }

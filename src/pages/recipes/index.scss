@@ -9,13 +9,21 @@
         }
         &-sub {
             display: flex;
-            flex-direction: row;
             flex-wrap: wrap;
+            justify-content: flex-start;
             &-item {
-                padding: 10rpx 44rpx;
-                border-radius: 25rpx;
+                width: calc((100% - 80px) / 4);
+                margin-right: 20px;
+                margin-bottom: 20px;
                 border: 1rpx solid #e2e2e4;
-                margin: 10rpx;
+                border-radius: 25rpx;
+                padding: 10px;
+                box-sizing: border-box;
+                text-align: center;
+                background-color: antiquewhite;
+                &:nth-of-type(4n+0) {
+                    margin-right: 0;
+                }
             }
         }
     }

@@ -113,7 +113,7 @@ const FLITER_NAV = [
             text: '补锌'
         }, {
             key: '3',
-            text: '感冒咳嗽'
+            text: '感冒'
         }, {
             key: '4',
             text: '便秘'

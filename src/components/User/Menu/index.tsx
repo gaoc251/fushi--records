@@ -14,21 +14,23 @@ import aboutIcon from '@/asset/imgs/about.png'
 import fankuiIcon from '@/asset/imgs/fankui.png'
 
 const menu =[
-    // {
-    //     icon: favorIcon,
-    //     text: '我的收藏',
-    //     key: 'favorite'
-    // }, 
     {
-        icon: aboutIcon,
-        text: '关于我们',
-        key: 'about'
+        icon: favorIcon,
+        text: '我的收藏',
+        key: 'favorite',
+        action: '/pages/favorites/index?'
     }, 
-    {
-        icon: fankuiIcon,
-        text: '意见反馈',
-        key: 'fankui'
-    }]
+    // {
+    //     icon: aboutIcon,
+    //     text: '关于我们',
+    //     key: 'about'
+    // }, 
+    // {
+    //     icon: fankuiIcon,
+    //     text: '意见反馈',
+    //     key: 'fankui'
+    // }
+]
 
 export default class Menu extends Component<any, stateType> {
 
@@ -43,6 +45,11 @@ export default class Menu extends Component<any, stateType> {
         
     }
 
+    jumpAction (item) {
+        Taro.switchTab({
+            url: item.action
+        })
+    }
     
     render () {
         const {count_line} = this.state
@@ -50,7 +57,7 @@ export default class Menu extends Component<any, stateType> {
         return (
             <View className='user-menu'>
                 {menu && menu.map((item, index:number) => {
-                    return <View className='user-menu__item'>
+                    return <View className='user-menu__item' onClick={this.jumpAction.bind(this, item)}>
                         <Image className="user-menu__item-icon" src={item.icon} />  
                         <View className='user-menu__item-txt'>{item.text}</View>
                     </View>
