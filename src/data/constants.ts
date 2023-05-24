@@ -1,12 +1,12 @@
 /**
  * 常量
  */
-import icon1 from '../asset/imgs/icon1.png'
-import icon2 from '../asset/imgs/icon2.png'
-import icon3 from '../asset/imgs/icon3.png'
-import icon4 from '../asset/imgs/icon4.png'
-import icon5 from '../asset/imgs/icon5.png'
-import icon6 from '../asset/imgs/icon6.png'
+import icon1 from '../asset/imgs/icon/home1.png'
+import icon2 from '../asset/imgs/icon/home2.png'
+import icon3 from '../asset/imgs/icon/home3.png'
+import icon4 from '../asset/imgs/icon/home6.png'
+import icon5 from '../asset/imgs/icon/home4.png'
+import icon6 from '../asset/imgs/icon/home5.png'
 // 筛选类别对象
 const FLITER_NAV = [
     {
@@ -35,7 +35,7 @@ const FLITER_NAV = [
             text: '1周+',
             textColor: '#E23D24',
             imgURL: icon4,
-            bgColor: '#EDFAC3'
+            bgColor: '#f1fcff'
         },{
             key: '24',
             text: '2周+',
