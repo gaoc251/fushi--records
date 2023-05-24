@@ -65,7 +65,7 @@ export default class RecommendList extends Component<propsType>  {
             </ScrollView>}
 
             {/* 纵向 */}
-            { type == 'Y' && list.length && <View className='index-recommend__contentY'>
+            { type == 'Y' && list.length > 0 && <View className='index-recommend__contentY'>
               { list.map((item:any, index:number) => {
                   console.log("item", item)
                   let _img = item.imgList && JSON.parse(item.imgList)[0]

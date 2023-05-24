@@ -35,7 +35,7 @@ export default class FavList extends Component<propType>  {
                 return <View className='fav-list__item'>
                     <Image className='fav-list__item-img' src={_img}/>
                     <View className='fav-list__item-info'>
-                        <View className='fav-list__item-info-title'>{item.title}</View>
+                        <View className='fav-list__item-info-title'>{item.recordTitle}</View>
                         <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
                             <View className='fav-list__item-info-time'>{item.time}  ·</View>
                             <View className='fav-list__item-info-favoriteNum'>

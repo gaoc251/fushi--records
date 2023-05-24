@@ -1,5 +1,7 @@
 $height-item: 200px;
-
+$text-main: #5c5c5c;
+$text-minor: #959696;
+$text-high: #e69cab;
 .commonItem2__item {
     position: relative;
     display: inline-flex;
@@ -14,7 +16,7 @@ $height-item: 200px;
         height: $height-item;
         width: $height-item;
         margin-right: 20px;
-        border-radius: 20px;
+        border-radius: 40px;
     }
     &-info {
         width: 400px;
@@ -30,12 +32,12 @@ $height-item: 200px;
             font-weight: 500;
         }
         &-desc {
-            color: #909090;
+            color: $text-minor;
             margin-top: 15px;
         }
         &-month {
-            color: #e69cab;
-            border: 1px solid #e69cab;
+            color: $text-high;
+            border: 1px solid $text-high;
             padding: 0px 10px;
             border-radius: 10px;
             width: fit-content;
@@ -47,7 +49,7 @@ $height-item: 200px;
             color: #5c5c5c;
             margin-top: 15px;
             &-item {
-                margin-right: 50px;
+                margin-right: 70px;
             }
         }
     }

@@ -1,3 +1,6 @@
+$theme-color: #E9F3F0;
+$text-main: #5c5c5c;
+$text-minor: #959696;
 .index-icon {
     display: flex;
     flex-direction: row;
@@ -15,10 +18,14 @@
         &-img {
             height: 106px;
             width: 106px;
+            background: $theme-color;
+            border-radius: 50%;
+            border: 20px solid $theme-color;
         }
         &-text {
             margin-top: 30px;
             font-size: 34px;
+            color: $text-main;
         }
     }
 }

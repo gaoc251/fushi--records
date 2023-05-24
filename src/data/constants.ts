@@ -32,19 +32,19 @@ const FLITER_NAV = [
             bgColor: '#F3F8FD'
         },{
             key: '12',
-            text: '1周+',
+            text: '1周以上',
             textColor: '#E23D24',
             imgURL: icon4,
             bgColor: '#f1fcff'
         },{
             key: '24',
-            text: '2周+',
+            text: '2周以上',
             textColor: '#FF9B00',
             imgURL: icon5,
             bgColor: '#FFD4D4'
         },{
             key: '36',
-            text: '3周+',
+            text: '3周以上',
             textColor: '#186DDD',
             imgURL: icon6,
             bgColor: '#FFFDEB'

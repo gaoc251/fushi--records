@@ -27,7 +27,7 @@ export default {
       selectedIconPath: "./asset/imgs/home-select.png",
     }, {
       pagePath: 'pages/recipes/index',
-      text: '配方',
+      text: '分类',
       iconPath: "./asset/imgs/recipes.png",
       selectedIconPath: "./asset/imgs/recipes-select.png",
     }, {
