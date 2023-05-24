@@ -17,7 +17,7 @@ export default {
   },
   tabBar: {
     color: 'rgba(0, 0, 0, 0.6)',
-    selectedColor: '#22BB9B',
+    selectedColor: 'f8b155',
     backgroundColor: '#fff',
     borderStyle: 'white',
     list: [{
