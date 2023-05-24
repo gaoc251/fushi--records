@@ -2,10 +2,18 @@ import { Component } from 'react'
 import { View, Image, ScrollView } from '@tarojs/components'
 import './index.scss'
 import Taro from '@tarojs/taro'
-import viewIcon from '../../../asset/imgs/view.png'
-export default class RecommendList extends Component  {
+
+import CommonItem1 from '@/components/Common/Item1'
+import CommonItem2 from '@/components/Common/Item2'
+
+interface propsType {
+  list:any // 列表数据
+  type: string // 滚动方向；X 横向 Y 纵向
+  title: string // 标题
+}
+export default class RecommendList extends Component<propsType>  {
   state = {
-    title: '大家都在看',
+    // title: '大家都在看',
     // rightWrap: {
     //     text: '更多',
     //     action: 'sss'
@@ -34,8 +42,8 @@ export default class RecommendList extends Component  {
   }
 
   render () {
-    const { title, rightWrap } = this.state
-    const { list } = this.props
+    const { rightWrap } = this.state
+    const { list, title, type } = this.props
     return (
         <View className='index-recommend'>
             <View className='index-recommend__header'>
@@ -43,7 +51,8 @@ export default class RecommendList extends Component  {
                 { rightWrap && <View className='index-recommend__header-right' onClick={this.jumpAction.bind(this, rightWrap.action)}>{rightWrap.text}</View>}
             </View>
 
-            { list.length && <ScrollView
+            {/* 横向 */}
+            { type == 'X' && list.length && <ScrollView
             scrollX
             scrollWithAnimation
             className='index-recommend__content'
@@ -51,20 +60,18 @@ export default class RecommendList extends Component  {
                 { list.map((item:any, index:number) => {
                     console.log("item", item)
                     let _img = item.imgList && JSON.parse(item.imgList)[0]
-                    return <View className='index-recommend__content-item' onClick={this.jumpDetail.bind(this, item)}>
-                        <Image src={_img} className="index-recommend__content-item-img"/>
-                        <View className='index-recommend__content-item-info'>
-                            <View className='index-recommend__content-item-info-title ellipsis'>{item.recordTitle}</View>
-                            <View className='index-recommend__content-item-info-desc ellipsis'>{item.description}</View>
-                        </View>
-
-                        <View className='index-recommend__content-item-fav'>
-                            <Image className='icon' src={viewIcon} />
-                            {item.viewNum}
-                        </View>
-                    </View>
+                    return <CommonItem1 item={item} img={_img} jumpAction={this.jumpDetail}/>
                 })}
             </ScrollView>}
+
+            {/* 纵向 */}
+            { type == 'Y' && list.length && <View className='index-recommend__contentY'>
+              { list.map((item:any, index:number) => {
+                  console.log("item", item)
+                  let _img = item.imgList && JSON.parse(item.imgList)[0]
+                  return <CommonItem2 item={item} img={_img} jumpAction={this.jumpDetail}/>
+              })}
+            </View>}
         </View>
     )
   }

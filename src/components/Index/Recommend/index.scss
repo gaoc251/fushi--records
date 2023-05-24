@@ -4,7 +4,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 30px;
+        margin-bottom: 34px;
         &-title {
             font-size: 40px;
             font-weight: 700;
@@ -77,57 +77,5 @@
         width: 100vw;
         white-space: nowrap;
         display: inline-block;
-        &-item {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            height: 212px;
-            width: 406px;
-            background-color: #F8F9FE;
-            border-radius: 15px;
-            margin-right: 20px;
-            padding: 0 30px;
-            box-sizing: border-box;
-            
-            &-img {
-                height: 100px;
-                width: 100px;
-                margin-right: 20px;
-            }
-            &-info {
-                width: 220px;
-                .ellipsis {
-                    white-space: nowrap;
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                }
-                &-title {
-                    font-size: 30px;
-                    font-weight: 400;
-                }
-                &-desc {
-                    color: #909090;
-                    font-size: 28px;
-                    margin-top: 10px;
-                }
-            }
-            &-fav {
-                margin-top: 10px;
-                display: flex;
-                align-items: center;
-                color: #FF9B00;
-                background: #fff;
-                padding: 2px 16px;
-                border-radius: 15px;
-                position: absolute;
-                bottom: 10px;
-                right: 10px;
-                .icon {
-                    height: 34px;
-                    width: 34px;
-                    margin-right: 10px;
-                }
-            }
-        }
     }
 }

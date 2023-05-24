@@ -55,10 +55,12 @@ export default class Index extends Component {
         <IconList />
 
         {/* 大家都在看 */}
-        <RecommendList list={recommendList}/>
+        {/* <RecommendList list={recommendList} title={'大家都在看'} type={'X'} /> */}
+        {/* 精选横向 */}
+        <RecommendList list={recommendList} title={'精选食谱'} type={'Y'} />
 
         {/* 其他筛选项 */}
-        <OtherCate />
+        {/* <OtherCate /> */}
       </View>
     )
   }

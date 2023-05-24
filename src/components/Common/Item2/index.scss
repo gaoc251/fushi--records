@@ -1,0 +1,54 @@
+$height-item: 200px;
+
+.commonItem2__item {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: $height-item;
+    width: 100%;
+    background-color: #fff;
+    box-sizing: border-box;
+    margin-bottom: 34px;
+    
+    &-img {
+        height: $height-item;
+        width: $height-item;
+        margin-right: 20px;
+        border-radius: 20px;
+    }
+    &-info {
+        width: 400px;
+        height: 100%;
+        font-size: 24px;
+        .ellipsis {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        &-title {
+            font-size: 34px;
+            font-weight: 500;
+        }
+        &-desc {
+            color: #909090;
+            margin-top: 15px;
+        }
+        &-month {
+            color: #e69cab;
+            border: 1px solid #e69cab;
+            padding: 0px 10px;
+            border-radius: 10px;
+            width: fit-content;
+            margin-top: 15px;
+        }
+        &-num {
+            display: flex;
+            flex-direction: row;
+            color: #5c5c5c;
+            margin-top: 15px;
+            &-item {
+                margin-right: 50px;
+            }
+        }
+    }
+}
