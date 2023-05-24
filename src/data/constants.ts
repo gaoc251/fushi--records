@@ -1,12 +1,12 @@
 /**
  * 常量
  */
-import icon1 from '../asset/imgs/icon/home1.png'
-import icon2 from '../asset/imgs/icon/home2.png'
-import icon3 from '../asset/imgs/icon/home3.png'
-import icon4 from '../asset/imgs/icon/home6.png'
-import icon5 from '../asset/imgs/icon/home4.png'
-import icon6 from '../asset/imgs/icon/home5.png'
+import icon1 from '../asset/imgs/icon/home6.png'
+import icon2 from '../asset/imgs/icon/home4.png'
+import icon3 from '../asset/imgs/icon/home1.png'
+import icon4 from '../asset/imgs/icon/home2.png'
+import icon5 from '../asset/imgs/icon/home5.png'
+import icon6 from '../asset/imgs/icon/home3.png'
 // 筛选类别对象
 const FLITER_NAV = [
     {

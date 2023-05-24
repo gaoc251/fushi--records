@@ -30,7 +30,7 @@ export default class IconList extends Component  {
             {FLITER_NAV && FLITER_NAV[0].subList.map((item:any) => {
                 return <View className='index-icon_item' onClick={this.handelJumpCateSub.bind(this, item)}>
                     <Image className='index-icon_item-img' src={item.imgURL} lazyLoad mode='scaleToFill'/>
-                    <View className='index-icon_item-text' style={{color: item.textColor}}>{item.text}</View>
+                    <View className='index-icon_item-text'>{item.text}</View>
                 </View>
             })}
         </View>

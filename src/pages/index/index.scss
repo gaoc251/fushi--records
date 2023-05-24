@@ -1,7 +1,8 @@
 .index {
     &__header {
         height: 150px;
-        background-color: #E9F3F0;
+        // background-color: #E9F3F0;
+        background: linear-gradient(180deg,#f8b155,#fff);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -16,6 +17,7 @@
                 line-height: 70px;
                 padding-left: 30px;
                 font-size: 28px;
+                background-color: #fff;
             }
             &-btn {
                 margin-left: 28px;
