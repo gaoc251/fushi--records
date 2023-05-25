@@ -1,5 +1,6 @@
 $bgcolor: #22BB9B;
 $navHeight: 74rpx;
+$text-main: #5c5c5c;
 .favorites {
     padding: 20rpx 44rpx;
     &__tab {
@@ -20,6 +21,18 @@ $navHeight: 74rpx;
             background-color: $bgcolor;
             color: #fff;
             border: 1rpx solid $bgcolor;
+        }
+    }
+    .no-data {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $text-main;
+        margin-top: 200px;
+        &-icon {
+            height: 300px;
+            width: 300px;
+            margin-bottom: 80px;
         }
     }
 }

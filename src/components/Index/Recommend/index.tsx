@@ -58,7 +58,6 @@ export default class RecommendList extends Component<propsType>  {
             className='index-recommend__content'
             >
                 { list.map((item:any, index:number) => {
-                    console.log("item", item)
                     let _img = item.imgList && JSON.parse(item.imgList)[0]
                     return <CommonItem1 item={item} img={_img} jumpAction={this.jumpDetail}/>
                 })}
@@ -67,7 +66,6 @@ export default class RecommendList extends Component<propsType>  {
             {/* 纵向 */}
             { type == 'Y' && list.length > 0 && <View className='index-recommend__contentY'>
               { list.map((item:any, index:number) => {
-                  console.log("item", item)
                   let _img = item.imgList && JSON.parse(item.imgList)[0]
                   return <CommonItem2 item={item} img={_img} jumpAction={this.jumpDetail}/>
               })}

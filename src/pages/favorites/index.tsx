@@ -1,10 +1,11 @@
 import { Component } from 'react'
-import { View, Image, ScrollView } from '@tarojs/components'
+import { View, Image, Text } from '@tarojs/components'
 import './index.scss'
 import Taro from '@tarojs/taro'
 import FavList from '@/components/Favorites/FavList'
 import { getFavList } from './lib/getFavList'
 import { clickCollect } from '../detail/lib/clickCollectBtn'
+import noDataIcon from '@/asset/imgs/icon/no_data.png'
 
 export default class Favorites extends Component  {
 
@@ -12,15 +13,6 @@ export default class Favorites extends Component  {
         favList: [], // 收藏列表
         openId: Taro.getStorageSync('openId')
     }
-    // async componentWillMount () {
-    //     debugger
-    //     let self = this
-    //     await getFavList(this.state.openId,(list)=>{
-    //         self.setState({
-    //             favList: list
-    //         })
-    //     })
-    // }
 
     componentDidMount () { }
 
@@ -60,6 +52,10 @@ export default class Favorites extends Component  {
 
                 {/* 收藏列表 */}
                 <FavList list={favList} changCollect={this.changeCollectState.bind(this)}/>
+                {favList.length == 0 && <View className='no-data'>
+                    <Image src={noDataIcon} className="no-data-icon"/>
+                    <Text>您还没有收藏，快去收藏吧</Text>
+                </View>}
             </View>
         )
     }
