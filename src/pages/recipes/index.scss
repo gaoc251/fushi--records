@@ -1,5 +1,6 @@
 .recipes {
-    padding: 30rpx 44rpx;
+    display: flex;
+    padding: 30rpx 0;
     &__item {
         margin-bottom: 20rpx;
         &-title {

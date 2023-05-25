@@ -14,17 +14,17 @@ import aboutIcon from '@/asset/imgs/about.png'
 import fankuiIcon from '@/asset/imgs/fankui.png'
 
 const menu =[
-    {
-        icon: favorIcon,
-        text: '我的收藏',
-        key: 'favorite',
-        action: '/pages/favorites/index?'
-    }, 
     // {
-    //     icon: aboutIcon,
-    //     text: '关于我们',
-    //     key: 'about'
+    //     icon: favorIcon,
+    //     text: '我的收藏',
+    //     key: 'favorite',
+    //     action: '/pages/favorites/index?'
     // }, 
+    {
+        icon: aboutIcon,
+        text: '关于我们',
+        key: 'about'
+    }, 
     // {
     //     icon: fankuiIcon,
     //     text: '意见反馈',

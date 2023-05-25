@@ -1,0 +1,32 @@
+$theme-color: #f8b155;
+
+.cate-menu {
+  padding-top: 40px;
+  border-right: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.cate-menu__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 40px;
+  height: 50px;
+  border: 0 solid #ffffff;
+  border-left-width: 6px;
+
+  &--active {
+    border-left-color: $theme-color;
+  }
+
+  &-name {
+    margin-left: -6px;
+    width: 100%;
+    color: #333;
+    font-size: 28px;
+    text-align: center;
+
+    &--active {
+      color: $theme-color;
+    }
+  }
+}
