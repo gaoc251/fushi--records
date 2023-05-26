@@ -129,7 +129,7 @@ export default class Detail extends Component  {
           </View>
 
           <View className='detail__steps'>
-            <View className='detail__steps-title'>步骤：</View>
+            <View className='detail__subtitle'>步骤：</View>
             {detailInfo.steps && detailInfo.steps.split(';;').map((item: any)=>{
               return <View className=''>{item}</View>
             })}
@@ -137,7 +137,8 @@ export default class Detail extends Component  {
 
           <Image src={detailInfo.collectState?favIconSelected: favIcon} className='detail__favicon' onClick={this.handelCollect.bind(this)}/>
 
-          <Comments />
+          {/* <View className='detail__subtitle' style={{marginLeft: '22px'}}>评价：</View>
+          <Comments /> */}
         </View>
     )
   }
