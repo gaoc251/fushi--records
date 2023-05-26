@@ -8,7 +8,8 @@ export default {
     'pages/uploadFushi/index',
     'pages/cateSub/index',
     'pages/search/index',
-    'pages/about/index'
+    'pages/about/index',
+    'pages/feedback/index'
   ],
   window: {
     backgroundTextStyle: 'light',

@@ -26,11 +26,12 @@ const menu =[
         key: 'about',
         action: '/pages/about/index'
     }, 
-    // {
-    //     icon: fankuiIcon,
-    //     text: '意见反馈',
-    //     key: 'fankui'
-    // }
+    {
+        icon: fankuiIcon,
+        text: '意见反馈',
+        key: 'feedback',
+        action: '/pages/feedback/index'
+    }
 ]
 
 export default class Menu extends Component<any, stateType> {
@@ -51,7 +52,7 @@ export default class Menu extends Component<any, stateType> {
             url: item.action
         })
         item.key != 'favorite' && Taro.navigateTo({
-            url: '/pages/about/index'
+            url: item.action
         })
     }
     
