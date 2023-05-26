@@ -1,0 +1,19 @@
+$text-main: #5c5c5c;
+$text-minor: #959696;
+$text-high: #f8b155;
+.about {
+    padding: 44px;
+    &__title {
+        font-size: 38px;
+        color: $text-high;
+        font-weight: 400;
+        margin-bottom: 20px;
+        &-line {
+            margin-top: 20px;
+        }
+    }
+    &__content {
+        font-size: 30px;
+        color: $text-minor;
+    }
+}

@@ -23,7 +23,8 @@ const menu =[
     {
         icon: aboutIcon,
         text: '关于我们',
-        key: 'about'
+        key: 'about',
+        action: '/pages/about/index'
     }, 
     // {
     //     icon: fankuiIcon,
@@ -46,8 +47,11 @@ export default class Menu extends Component<any, stateType> {
     }
 
     jumpAction (item) {
-        Taro.switchTab({
+        item.key == 'favorite' && Taro.switchTab({
             url: item.action
+        })
+        item.key != 'favorite' && Taro.navigateTo({
+            url: '/pages/about/index'
         })
     }
     
