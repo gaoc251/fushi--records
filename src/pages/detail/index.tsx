@@ -9,6 +9,9 @@ import { isLogin, handleLogin } from '@/utils/util'
 import favIcon from '@/asset/imgs/favorite-default.png'
 import favIconSelected from '@/asset/imgs/favorite-choose.png'
 
+import smallCollectIcon from '@/asset/imgs/icon/collect.png'
+import smallTimeIcon from '@/asset/imgs/icon/time.png'
+
 import Comments from '@/components/Detail/Comments'
 const cookingText = {
   0: '蒸',
@@ -71,7 +74,7 @@ export default class Detail extends Component  {
 
     return (
         <View className='detail'>
-          {/* <View className='detail__header'>
+          <View className='detail__header'>
             <Swiper
               className='detail__header-swiper'
               indicatorColor='#999'
@@ -84,18 +87,46 @@ export default class Detail extends Component  {
                   </SwiperItem>
                 })}
             </Swiper>
-          </View> */}
+          </View>
 
           <View className='detail__title'>{detailInfo.recordTitle}</View>
 
-          {/* <View className='detail__info'>
-            <View>食材：{detailInfo.ingredients}</View>
-            <View>调料：{detailInfo.seasoning}</View>
-            <View>烹饪方法{cookingText[detailInfo.cooking]}</View>
-            <View>月龄：{detailInfo.month}</View>
-            <View>难易程度：{detailInfo.hard} 级</View>
-            <View>注意：{detailInfo.tip}</View>
-          </View> */}
+          <View className='detail__baseInfo'>
+            <View className='detail__baseInfo-item'>
+              <Image className='detail__baseInfo-item-icon' src={smallTimeIcon} />
+              <View className='detail__baseInfo-item-text'>时间：   {detailInfo.time}</View>
+            </View>
+            <View className='detail__baseInfo-item'>
+              <Image className='detail__baseInfo-item-icon' src={smallCollectIcon} />
+              <View className='detail__baseInfo-item-text'>收藏人数：   {detailInfo.favoriteNum}</View>
+            </View>
+          </View>
+          <View className='detail__info'>
+            <View className='detail__info-item'>
+              <View className='detail__info-item-title'>食材：</View>
+              <View className='detail__info-item-text'>{detailInfo.ingredients}</View>
+            </View>
+            <View className='detail__info-item'>
+              <View className='detail__info-item-title'>调料：</View>
+              <View className='detail__info-item-text'>{detailInfo.seasoning}</View>
+            </View>
+            <View className='detail__info-item'>
+              <View className='detail__info-item-title'>烹饪方法：</View>
+              <View className='detail__info-item-text'>{cookingText[detailInfo.cooking]}</View>
+            </View>
+            <View className='detail__info-item'>
+              <View className='detail__info-item-title'>月龄：</View>
+              <View className='detail__info-item-text'>{(detailInfo.month == 12 || detailInfo.month == 24 || detailInfo.month == 36)? detailInfo.month/12 + '周岁以上':'月龄'}</View>
+            </View>
+            <View className='detail__info-item'>
+              <View className='detail__info-item-title'>难易程度：</View>
+              <View className='detail__info-item-text'>{detailInfo.hard} 级</View>
+            </View>
+            <View className='detail__info-item'>
+              <View className='detail__info-item-title'>注意：</View>
+              <View className='detail__info-item-text'>{detailInfo.tip}</View>
+            </View>
+          </View>
 
           <View className='detail__steps'>
             <View className='detail__steps-title'>步骤：</View>

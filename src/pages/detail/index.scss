@@ -1,9 +1,11 @@
-$height: 500rpx;
+$height: 400rpx;
+$text-main: #5c5c5c;
+$text-minor: #959696;
+$text-high: #f8b155;
 .detail {
     padding-bottom: 50px;
     &__header {
         height: $height;
-        background-color: #E9F3F0;
         &-swiper {
             height: $height;  
         }
@@ -15,22 +17,47 @@ $height: 500rpx;
     &__title {
         font-size: 50rpx;
         padding: 30rpx;
-        text-align: center;
         font-weight: 600;
     }
+    &__baseInfo {
+        display: flex;
+        flex-direction: row;
+        padding: 0 30px 30px 30rpx;
+        &-item {
+            display: flex;
+            flex-direction: row;
+            width: 50%;
+            &-icon{
+                height: 40px;
+                width: 40px;
+                margin-right: 20px;
+            }
+            &-text {
+                font-size: 28px;
+                line-height: 40px;
+            }
+        }
+    }
     &__info {
-        border-radius: 50rpx;
-        background-color: #FF9B00;
-        margin: 0 44rpx;
-        padding: 20rpx 36rpx;
-        color: #fff;
+        margin: 44px;
         font-size: 32rpx;
-        line-height: 1.8;
+        line-height: 2.7;
+        &-item {
+            display: flex;
+            flex-direction: row;
+            border-bottom: 1rpx dashed #e3e4e3;
+            &-title {
+                width: 180px;
+            }
+            &-text {
+                color: $text-minor;
+            }
+        }
     }
     &__steps {
-        margin: 20rpx 44rpx;
+        margin: 44rpx;
         font-size: 34rpx;
-        line-height: 1.8;
+        line-height: 2.7;
         color: #696464;
         &-title {
             font-size: 40rpx;
@@ -42,7 +69,7 @@ $height: 500rpx;
         height: 60px;
         width: 60px;
         position: absolute;
-        top: 380px;
+        top: 300px;
         right: 60px;
         border: 15px solid transparent;
         border-radius: 35%;
