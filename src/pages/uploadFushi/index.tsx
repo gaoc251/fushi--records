@@ -1,14 +1,17 @@
 import { Component } from 'react'
-import { View, Form, Input, RadioGroup, Radio, Button, Textarea } from '@tarojs/components'
+import { View, Form, Input, RadioGroup, Radio, Button, Image, CheckboxGroup, Checkbox, Text } from '@tarojs/components'
 import './index.scss'
 import Taro from '@tarojs/taro'
 
 import UploadImage from '@/components/Common/UploadImage'
 import { Request } from '@/utils/request'
 import { API_FUSHI_saveFushiRecord } from '@/data/api'
+import smallAddIcon from '@/asset/imgs/icon/add.png'
+import smallReduceIcon from '@/asset/imgs/icon/reduce.png'
 export default class UploadFushi extends Component {
   state = {
-    imgList: []
+    imgList: [],
+    steps: [{ val:''}], // 步骤
   }
 
   componentWillMount() { }
@@ -22,13 +25,30 @@ export default class UploadFushi extends Component {
   componentDidHide() { }
 
   formSubmit = e => {
-    const { cate, cooking, description, effect, hard, ingredients, month, steps, time, recordTitle, seasoning, tip} = e.detail.value
+    const { cate, cooking, description, effect, hard, ingredients, month, time, recordTitle, seasoning, tip} = e.detail.value
+    console.log("state", this.state)
+    const {imgList, steps} = this.state
+
+    let _imgList:any = []
+    imgList.forEach((item:any) => {
+      _imgList.push(item.url)
+    })
+    let _steps:any = []
+    steps.forEach((item:any) => {
+      _steps.push(item.val)
+    })
+
+    if (_imgList.length == 0 || (steps.length ==1 && steps[0].val == '')) {
+      Taro.showToast({
+        title:'快去完善',
+        icon: 'none'
+      })
+      return false
+    }
+    debugger
     // cate || cooking || description || effect || hard || ingredients || month || steps || time || recordTitle || seasoning || tip || this.state.imgList.length 
     if (true) {
-      let _imgList:any = []
-      this.state.imgList.forEach((item:any) => {
-        _imgList.push(item.url)
-      })
+      
       
       let params = {
         ingredients,
@@ -37,7 +57,7 @@ export default class UploadFushi extends Component {
         month,
         hard,
         tip,
-        steps,
+        steps: JSON.stringify(_steps),
         imgList: JSON.stringify(_imgList),
         cooking,
         effect,
@@ -47,7 +67,6 @@ export default class UploadFushi extends Component {
       }
 
       console.log('params', params)
-    
       Request('post', API_FUSHI_saveFushiRecord, params).then((res:any) => {
         if (res.code == 0) {
           Taro.showModal({
@@ -80,8 +99,36 @@ export default class UploadFushi extends Component {
     })
   }
 
+  // 新增一条步骤
+  handleAddStep () {
+    let {steps} = this.state
+    steps.push({val:''})
+    this.setState({
+      steps
+    })
+  }
+
+  // 删除一条步骤
+  handleDelStep (index) {
+    let {steps} = this.state
+    steps.splice(index, 1)
+    this.setState({
+      steps
+    })
+  }
+
+  // 步骤输入值
+  stepInputVal (index, e) {
+    let {steps} = this.state
+    steps[index].val=e.currentTarget.value
+    this.setState({
+      steps
+    })
+  }
+
   render() {
-    const { imgList } = this.state
+    const { imgList, steps } = this.state
+    
     return (
       <View className='upload-fushi'>
         <Form onSubmit={this.formSubmit}>
@@ -114,11 +161,23 @@ export default class UploadFushi extends Component {
             </View>
           </View>
 
-          <View className='upload-fushi__form-item uploadImg'>
+          <View className='upload-fushi__form-item'>
             <View className='upload-fushi__form-item-title'>烹饪步骤：</View>
-            <View className='upload-fushi__form-item-flex1'>
-              <Textarea autoHeight name="steps" placeholder="请输入步骤" style='background:#fff;width:90%;min-height:80px;padding:10px; border:1px solid #eee'/>
-            </View>
+          </View>
+          <View className='upload-fushi__form-item-steps'>
+            { steps.map((item, index) => {
+              return <View className='upload-fushi__form-item-steps-item'>
+                    <View className='upload-fushi__form-item-steps-content'>
+                      <Text style={{width: '14px'}}>{index + 1}.</Text>
+                       <Input placeholder='请输入步骤' className='upload-fushi__form-item-steps-content-input' onBlur={this.stepInputVal.bind(this, index )} value={item.val}/>
+                </View> 
+                <View className='upload-fushi__form-item-steps-control'>
+                  <Image src={smallAddIcon} className="upload-fushi__form-item-steps-control-icon" onClick={this.handleAddStep.bind(this)} />
+                  {steps.length > 1 && <Image src={smallReduceIcon} className="upload-fushi__form-item-steps-control-icon"
+                  onClick={this.handleDelStep.bind(this, index)} />}
+                </View>
+              </View>
+            })}
           </View>
 
           <View className='upload-fushi__form-item'>
@@ -182,16 +241,16 @@ export default class UploadFushi extends Component {
 
           <View className='upload-fushi__form-item chooseHeight'>
             <View className='upload-fushi__form-item-title'>功效：</View>
-            <RadioGroup name="effect" className='upload-fushi__form-item-radio'>
-              <View className='upload-fushi__form-item-label'><Radio value="0" />补钙</View>
-              <View className='upload-fushi__form-item-label'><Radio value="1" />补铁</View>
-              <View className='upload-fushi__form-item-label'><Radio value="2" />补锌</View>
-              <View className='upload-fushi__form-item-label'><Radio value="3" />感冒咳嗽</View>
-              <View className='upload-fushi__form-item-label'><Radio value="4" />便秘</View>
-              <View className='upload-fushi__form-item-label'><Radio value="5" />腹泻</View>
-              <View className='upload-fushi__form-item-label'><Radio value="6" />积食</View>
-              <View className='upload-fushi__form-item-label'><Radio value="7" />清火</View>
-            </RadioGroup>
+            <CheckboxGroup name='effect' className='upload-fushi__form-item-radio'>
+              <View className='upload-fushi__form-item-label'><Checkbox value="补钙" />补钙</View>
+              <View className='upload-fushi__form-item-label'><Checkbox value="补铁" />补铁</View>
+              <View className='upload-fushi__form-item-label'><Checkbox value="补锌" />补锌</View>
+              <View className='upload-fushi__form-item-label'><Checkbox value="感冒咳嗽" />感冒咳嗽</View>
+              <View className='upload-fushi__form-item-label'><Checkbox value="便秘" />便秘</View>
+              <View className='upload-fushi__form-item-label'><Checkbox value="腹泻" />腹泻</View>
+              <View className='upload-fushi__form-item-label'><Checkbox value="积食" />积食</View>
+              <View className='upload-fushi__form-item-label'><Checkbox value="清火" />清火</View>
+            </CheckboxGroup>
           </View>
           
           <Button className='btn' formType="submit">保存</Button>

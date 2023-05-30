@@ -1,3 +1,4 @@
+$theme-color: #f8b155;
 .upload-fushi {
     padding: 44px;
     &__form {
@@ -29,6 +30,35 @@
             }
             &-title {
                 width: 160px;
+            }
+            &-steps {
+                &-item {
+                    display: flex;
+                    flex-direction: row;
+                    margin-bottom: 10px;
+                    font-size: 30px;
+                    line-height: 40px;
+                }
+                &-content {
+                    display: flex;
+                    flex-direction: row;
+                    &-input {
+                        width: 500px;
+                        margin: 0 10px;
+                        border: 1px solid $theme-color;
+                        padding-left: 10px;
+                        border-radius: 8px;
+                    }
+                }
+                &-control {
+                    &-icon {
+                        height: 40px;
+                        width: 40px;
+                        &:first-child {
+                            margin-right: 10px;
+                        }
+                    }
+                }
             }
         }
     }
