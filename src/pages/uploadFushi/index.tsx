@@ -45,7 +45,7 @@ export default class UploadFushi extends Component {
       })
       return false
     }
-    debugger
+
     // cate || cooking || description || effect || hard || ingredients || month || steps || time || recordTitle || seasoning || tip || this.state.imgList.length 
     if (true) {
       

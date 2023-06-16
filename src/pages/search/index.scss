@@ -1,3 +1,10 @@
+$text-main: #5c5c5c;
+$text-minor: #959696;
+$text-high: #f8b155;
+$text-gray: #a9a9a9;
+$border-fourth: #f5f9fd;
+$border-first: #a9a9a9;
+$border-third: #f0f0f0;
 .search {
     &__wrap{
         display: flex;
@@ -25,6 +32,27 @@
         &-icon {
             height: 28px;
             width: 35px;
+        }
+    }
+    &__res {
+        padding: 20px 44px;
+        &-item {
+            border-bottom: 1px solid $border-third;
+            line-height: 80px;
+            font-size: 28px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            &-icon {
+                height: 50px;
+                width: 50px;
+                margin-right: 20px;
+            }
+            &-text {}
+        }
+        &-no {
+            color: $text-gray;
+            text-align: center;
         }
     }
 }
