@@ -71,6 +71,7 @@ export default class Detail extends Component  {
   render () {
     const { detailInfo} = this.state
     let _imgList = (detailInfo.imgList && JSON.parse(detailInfo.imgList)) || []
+    let _steps = (detailInfo.steps && JSON.parse(detailInfo.steps)) || []
 
     return (
         <View className='detail'>
@@ -130,7 +131,7 @@ export default class Detail extends Component  {
 
           <View className='detail__steps'>
             <View className='detail__subtitle'>步骤：</View>
-            {detailInfo.steps && detailInfo.steps.map((item: any)=>{
+            {_steps && _steps.map((item: any)=>{
               return <View className=''>{item}</View>
             })}
           </View>

@@ -2,6 +2,7 @@ $height: 400rpx;
 $text-main: #5c5c5c;
 $text-minor: #959696;
 $text-high: #f8b155;
+$text-gray: #a9a9a9;
 .detail {
     padding-bottom: 50px;
     &__header {
@@ -50,7 +51,7 @@ $text-high: #f8b155;
                 width: 180px;
             }
             &-text {
-                color: $text-minor;
+                color: $text-gray;
             }
         }
     }
