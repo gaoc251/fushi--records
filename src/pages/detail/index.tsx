@@ -107,26 +107,26 @@ export default class Detail extends Component  {
               <View className='detail__info-item-title'>食材：</View>
               <View className='detail__info-item-text'>{detailInfo.ingredients}</View>
             </View>
-            <View className='detail__info-item'>
+            {detailInfo.seasoning && <View className='detail__info-item'>
               <View className='detail__info-item-title'>调料：</View>
               <View className='detail__info-item-text'>{detailInfo.seasoning}</View>
-            </View>
+            </View>}
             <View className='detail__info-item'>
               <View className='detail__info-item-title'>烹饪方法：</View>
               <View className='detail__info-item-text'>{cookingText[detailInfo.cooking]}</View>
             </View>
             <View className='detail__info-item'>
               <View className='detail__info-item-title'>月龄：</View>
-              <View className='detail__info-item-text'>{(detailInfo.month == 12 || detailInfo.month == 24 || detailInfo.month == 36)? detailInfo.month/12 + '周岁以上':'月龄'}</View>
+              <View className='detail__info-item-text'>{(detailInfo.month == 12 || detailInfo.month == 24 || detailInfo.month == 36)? detailInfo.month/12 + '周岁以上':detailInfo.month + '月龄'}</View>
             </View>
             <View className='detail__info-item'>
               <View className='detail__info-item-title'>难易程度：</View>
               <View className='detail__info-item-text'>{detailInfo.hard} 级</View>
             </View>
-            <View className='detail__info-item'>
+            {detailInfo.tip && <View className='detail__info-item'>
               <View className='detail__info-item-title'>注意：</View>
               <View className='detail__info-item-text'>{detailInfo.tip}</View>
-            </View>
+            </View>}
           </View>
 
           <View className='detail__steps'>

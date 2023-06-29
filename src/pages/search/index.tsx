@@ -27,24 +27,28 @@ export default class Search extends Component  {
 
   // 搜索操作
   handleSearch (e) {
-    let key = this.state.searchVal || e.target.value
-    key && this.setState({
+    let key = e.target.value || this.state.searchVal
+    this.setState({
       searchVal: key,
       showSearchList: false
     })
 
     let self = this
-    getSearch(key, (res)=>{
+    key && getSearch(key, (res)=>{
       self.setState({
         searchResList: res,
         showSearchList: true
       })
     })
+    !key && this.setState({
+      showSearchList: false,
+      searchResList: []
+    })
   }
 
   inputValue(e) {
     let key = e.target.value
-    key && this.setState({
+    this.setState({
       searchVal: key,
       showSearchList: false
     })
@@ -66,7 +70,7 @@ export default class Search extends Component  {
             placeholderTextColor="#1F272D"
             focus 
             confirmType="search" 
-            onConfirm={this.handleSearch.bind(this)}
+            // onConfirm={this.handleSearch.bind(this)}
             onBlur={this.inputValue.bind(this)}
             style={{width: '260px'}}/>
             <View className='search__wrap-btn' onClick={this.handleSearch.bind(this)}>

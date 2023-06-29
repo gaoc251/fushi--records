@@ -13,7 +13,7 @@ $border-third: #f0f0f0;
         margin: 30px;
         &-input {
             border-radius: 10px;
-            border: 1px solid #22BB9B;
+            border: 1px solid $text-high;
             width: 400px;
             height: 70px;
             line-height: 70px;
@@ -21,7 +21,7 @@ $border-third: #f0f0f0;
         }
         &-btn {
             margin-left: 28px;
-            background-color: #22BB9B;
+            background-color: $text-high;
             height: 70px;
             width: 70px;
             border-radius: 10px;
