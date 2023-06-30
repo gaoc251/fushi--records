@@ -42,13 +42,15 @@ const FLITER_NAV = [
             textColor: '#FF9B00',
             imgURL: icon5,
             bgColor: '#FFD4D4'
-        },{
-            key: '36',
-            text: '3周以上',
-            textColor: '#186DDD',
-            imgURL: icon6,
-            bgColor: '#FFFDEB'
-        }]
+        },
+        // {
+        //     key: '36',
+        //     text: '3周以上',
+        //     textColor: '#186DDD',
+        //     imgURL: icon6,
+        //     bgColor: '#FFFDEB'
+        // }
+    ]
     }, {
         text: '品类查询',
         key: 'cate',
@@ -99,51 +101,53 @@ const FLITER_NAV = [
             key: '6',
             text: '炖'
         }]
-    }, {
-        text: '功能',
-        key: 'effect',
-        subList: [{
-            key: '0',
-            text: '补钙'
-        }, {
-            key: '1',
-            text: '补铁'
-        }, {
-            key: '2',
-            text: '补锌'
-        }, {
-            key: '3',
-            text: '感冒'
-        }, {
-            key: '4',
-            text: '便秘'
-        }, {
-            key: '5',
-            text: '腹泻'
-        }, {
-            key: '6',
-            text: '积食'
-        }, {
-            key: '7',
-            text: '清火'
-        }]
-    }, {
-        text: '三餐',
-        key: 'meals',
-        subList: [{
-            key: '0',
-            text: '早餐'
-        }, {
-            key: '1',
-            text: '午餐'
-        }, {
-            key: '2',
-            text: '晚餐'
-        }, {
-            key: '3',
-            text: '夜宵'
-        }]
-    }
+    }, 
+    // {
+    //     text: '功能',
+    //     key: 'effect',
+    //     subList: [{
+    //         key: '0',
+    //         text: '补钙'
+    //     }, {
+    //         key: '1',
+    //         text: '补铁'
+    //     }, {
+    //         key: '2',
+    //         text: '补锌'
+    //     }, {
+    //         key: '3',
+    //         text: '感冒'
+    //     }, {
+    //         key: '4',
+    //         text: '便秘'
+    //     }, {
+    //         key: '5',
+    //         text: '腹泻'
+    //     }, {
+    //         key: '6',
+    //         text: '积食'
+    //     }, {
+    //         key: '7',
+    //         text: '清火'
+    //     }]
+    // }, 
+    // {
+    //     text: '三餐',
+    //     key: 'meals',
+    //     subList: [{
+    //         key: '0',
+    //         text: '早餐'
+    //     }, {
+    //         key: '1',
+    //         text: '午餐'
+    //     }, {
+    //         key: '2',
+    //         text: '晚餐'
+    //     }, {
+    //         key: '3',
+    //         text: '夜宵'
+    //     }]
+    // }
 ];
 
 const OTHER_INFO = {
